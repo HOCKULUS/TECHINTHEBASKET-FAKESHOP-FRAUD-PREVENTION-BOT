@@ -37,8 +37,8 @@ $ID = $ie.document.getElementByID('request_custom_fields_45382549')
 $ID.click()
 $ID.value = "#Bestellnummer"
 $send = $ie.Document.links | where type -match "submit"
-#$send.click()
-write-host "klick"
+#$send.click()  #Noch muss das Formular manuell abgeschickt werden, ich arbeite aber an einer Lösung
+write-host "klick" #Du hast 3 Sekunden Zeit um Einreichen zu klicken
 start-sleep -s 3
 While($ie.Busy -eq $true) {Start-Sleep -Seconds 3;if($exit -eq 1){$global:Main_Tool_Icon.Visible      = $false;exit}}
 }
